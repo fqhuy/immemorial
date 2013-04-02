@@ -9,9 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.googlecode.jcsv.CSVStrategy;
-import com.googlecode.jcsv.annotations.internal.ValueProcessorProvider;
 import com.googlecode.jcsv.reader.CSVReader;
-import com.googlecode.jcsv.reader.internal.AnnotationEntryParser;
 import com.googlecode.jcsv.reader.internal.CSVReaderBuilder;
 
 import cmu.arktweetnlp.*;
@@ -24,7 +22,7 @@ public class Imme {
 		Reader csvFile = new InputStreamReader(
 				Imme.class.getResourceAsStream(filename));
 
-		ValueProcessorProvider vpp = new ValueProcessorProvider();
+		//ValueProcessorProvider vpp = new ValueProcessorProvider();
 		CSVReader<Tweet> personReader = new CSVReaderBuilder<Tweet>(csvFile)
 				.strategy(new CSVStrategy(',', '\"', '#', true, true))
 				.entryParser(new TweetParser()).build();
